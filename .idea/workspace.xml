@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f4dfc74-f676-45c5-8c2d-48eebb50cb73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/public/favicon.ico" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_113236_create_user_job_seekers_table.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_115516_create_user_employers_table.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_122419_create_capabilities_table.php" />
@@ -23,89 +22,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_140713_create_education_level_table.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_140733_create_education_degree_table.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_07_140802_create_education_institute_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/.env.example" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Console/Commands/Inspire.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Console/Kernel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Events/Event.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Exceptions/Handler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Controllers/Auth/PasswordController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Controllers/Controller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Kernel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Middleware/Authenticate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Middleware/EncryptCookies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Middleware/RedirectIfAuthenticated.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Middleware/VerifyCsrfToken.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/Requests/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Http/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Jobs/Job.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Listeners/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Policies/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Providers/AppServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Providers/AuthServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Providers/EventServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/Providers/RouteServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/app/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/artisan" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/bootstrap/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/bootstrap/autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/bootstrap/cache/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/auth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/broadcasting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/cache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/compile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/filesystems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/mail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/queue.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/services.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/session.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/config/view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/factories/ModelFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/migrations/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/migrations/2014_10_12_100000_create_password_resets_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/seeds/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/database/seeds/DatabaseSeeder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/gulpfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/public/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/public/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/public/robots.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/public/web.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/assets/sass/app.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/lang/en/auth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/lang/en/pagination.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/lang/en/passwords.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/lang/en/validation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/views/errors/503.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/views/vendor/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/resources/views/welcome.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/server.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/app/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/app/public/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/framework/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/framework/cache/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/framework/sessions/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/framework/views/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/storage/logs/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/tests/ExampleTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstapp/tests/TestCase.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env.example" afterPath="$PROJECT_DIR$/.env.example" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jobzy.iml" afterPath="$PROJECT_DIR$/.idea/jobzy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
