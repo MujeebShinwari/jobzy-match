@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSliderQuizesTable extends Migration
+class CreateEducationLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateSliderQuizesTable extends Migration
      */
     public function up()
     {
-        Schema::create('slider_quizes', function (Blueprint $table) {
+        Schema::create('education_levels', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('slider_id'); // FK
-	        $table->string('question');
+	        $table->string('text');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateSliderQuizesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('slider_quizes');
+        Schema::drop('education_levels');
     }
 }

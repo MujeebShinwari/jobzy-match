@@ -17,96 +17,92 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="jobzy" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2016_04_07_131054_create_seeker_applied_jobs_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_131054_create_seeker_applied_jobs_table.php">
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="40" selection-start="663" selection-end="663" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="714">
+            <state line="55" column="41" selection-start="1485" selection-end="1485" vertical-scroll-proportion="-35.384617" vertical-offset="15" max-vertical-offset="2091">
+              <folding>
+                <element signature="e#42#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Slider.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Slider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="6" selection-start="99" selection-end="99" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_135103_create_sliders_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135103_create_sliders_table.php">
+      <file leaf-file-name="helpers.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/helpers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="9" selection-start="588" selection-end="588" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="663">
+            <state line="32" column="31" selection-start="699" selection-end="699" vertical-scroll-proportion="-14.538462" vertical-offset="166" max-vertical-offset="731">
+              <folding>
+                <element signature="e#6#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_04_10_111757_create_industries_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_10_111757_create_industries_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_135546_create_slider_quizes_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135546_create_slider_quizes_table.php">
+      <file leaf-file-name="SeekerPersonalStyle.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SeekerPersonalStyle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="39" selection-start="436" selection-end="436" vertical-scroll-proportion="-9.961538" vertical-offset="13" max-vertical-offset="629">
+            <state line="8" column="4" selection-start="107" selection-end="217" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_135835_create_company_types_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135835_create_company_types_table.php">
+      <file leaf-file-name="SeekerWorkStyle.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SeekerWorkStyle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="387" selection-end="387" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+            <state line="8" column="35" selection-start="134" selection-end="134" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_135927_create_companies_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135927_create_companies_table.php">
+      <file leaf-file-name="JobSeeker.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/JobSeeker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="35" selection-start="632" selection-end="632" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="731">
+            <state line="11" column="12" selection-start="193" selection-end="193" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_140221_create_experiences_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140221_create_experiences_table.php">
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="49" selection-start="431" selection-end="431" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+            <state line="35" column="31" selection-start="700" selection-end="700" vertical-scroll-proportion="-17.153847" vertical-offset="149" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_07_140351_create_job_titles_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140351_create_job_titles_table.php">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="381" selection-end="381" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016_04_07_140713_create_education_level_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140713_create_education_level_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="12" selection-start="368" selection-end="391" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016_04_07_140733_create_education_degree_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140733_create_education_degree_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="43" selection-start="434" selection-end="434" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016_04_07_140802_create_education_institute_table.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140802_create_education_institute_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="399" selection-end="399" vertical-scroll-proportion="0.5301455" vertical-offset="0" max-vertical-offset="612">
+            <state line="11" column="79" selection-start="302" selection-end="315" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="425">
               <folding />
             </state>
           </provider>
@@ -120,15 +116,13 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_113236_create_user_job_seekers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_115516_create_user_employers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_122419_create_capabilities_table.php" />
@@ -150,6 +144,35 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_140713_create_education_level_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_140733_create_education_degree_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_07_140802_create_education_institute_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_060716_create_payment_plans_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_062306_create_payment_plans_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_062814_create_job_payments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_063301_create_job_matches_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_065151_create_seeker_personal_style_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_065305_create_seeker_work_style_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_065429_create_company_personal_style_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/verifyToken.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Jsonify.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyToken.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_142057_create_slider_quizzes_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_150356_create_education_levels_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_150442_create_education_degrees_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_08_150511_create_education_institues_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_10_105759_create_universities_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_10_110104_create_divisions_table.php" />
+        <option value="$PROJECT_DIR$/app/Slider.php" />
+        <option value="$PROJECT_DIR$/app/SeekerPersonalStyle.php" />
+        <option value="$PROJECT_DIR$/app/JobSeeker.php" />
+        <option value="$PROJECT_DIR$/app/SeekerWorkStyle.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/helpers.php" />
       </list>
     </option>
   </component>
@@ -186,7 +209,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,10 +240,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -236,136 +254,29 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jobs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jobzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../firstapp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -399,7 +310,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -407,7 +318,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31117824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37462234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -438,193 +349,350 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135835_create_company_types_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+        <state line="16" column="35" selection-start="387" selection-end="387" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135927_create_companies_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="35" selection-start="632" selection-end="632" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="731" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140221_create_experiences_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="49" selection-start="431" selection-end="431" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140351_create_job_titles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="381" selection-end="381" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_062306_create_payment_plans_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="33" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="680">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Jobs/Job.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_062814_create_job_payments_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+        <state line="21" column="86" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env.example">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_063301_create_job_matches_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="178" selection-end="178" vertical-scroll-proportion="0.28764805" vertical-offset="0" max-vertical-offset="591">
+        <state line="18" column="28" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="680">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_065151_create_seeker_personal_style_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+        <state line="16" column="10" selection-start="377" selection-end="493" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_065305_create_seeker_work_style_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="456" selection-end="456" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
-          <folding>
-            <element signature="e#7#392#0" expanded="false" />
-          </folding>
+        <state line="18" column="36" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="663">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_065429_create_company_personal_style_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+        <state line="18" column="40" selection-start="459" selection-end="459" vertical-scroll-proportion="0.4095563" vertical-offset="49" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="559" selection-end="652" vertical-scroll-proportion="-6.1923075" vertical-offset="179" max-vertical-offset="799">
+        <state line="27" column="41" selection-start="798" selection-end="798" vertical-scroll-proportion="0.49557522" vertical-offset="162" max-vertical-offset="816">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_122540_create_certificates_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="36" selection-start="387" selection-end="387" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+        <state line="215" column="24" selection-start="4587" selection-end="4591" vertical-scroll-proportion="75.19231" vertical-offset="5457" max-vertical-offset="17629">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_122419_create_capabilities_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Authenticatable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="401" selection-end="401" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="612">
+        <state line="4" column="6" selection-start="41" selection-end="41" vertical-scroll-proportion="0.097345136" vertical-offset="13" max-vertical-offset="1241">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_113236_create_user_job_seekers_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="9" selection-start="391" selection-end="454" vertical-scroll-proportion="-2.6153846" vertical-offset="204" max-vertical-offset="799">
+        <state line="17" column="17" selection-start="588" selection-end="588" vertical-scroll-proportion="0.33097345" vertical-offset="0" max-vertical-offset="565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_115516_create_user_employers_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="235" selection-end="235" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="680">
+        <state line="6" column="35" selection-start="117" selection-end="117" vertical-scroll-proportion="0.18053098" vertical-offset="0" max-vertical-offset="565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_122502_create_skills_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Response.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="11" selection-start="350" selection-end="375" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+        <state line="43" column="54" selection-start="1094" selection-end="1105" vertical-scroll-proportion="1.1433629" vertical-offset="0" max-vertical-offset="1887">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_122731_create_jobs_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="44" selection-start="347" selection-end="347" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="714">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_124123_create_job_certificates_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="11" selection-start="369" selection-end="436" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="629">
+        <state line="3140" column="85" selection-start="88163" selection-end="88249" vertical-scroll-proportion="0.032258064" vertical-offset="53091" max-vertical-offset="53618">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_124145_create_job_skills_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Validator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="424" selection-end="424" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+        <state line="16" column="25" selection-start="292" selection-end="301" vertical-scroll-proportion="0.48141593" vertical-offset="0" max-vertical-offset="565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_124207_create_job_characteristics_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="442" selection-end="442" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+        <state line="51" column="0" selection-start="1517" selection-end="1517" vertical-scroll-proportion="0.9129693" vertical-offset="332" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_130742_create_seeker_watchlists_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="6" selection-start="366" selection-end="447" vertical-scroll-proportion="-9.461538" vertical-offset="9" max-vertical-offset="629">
+        <state line="5" column="0" selection-start="75" selection-end="104" vertical-scroll-proportion="0.1450512" vertical-offset="0" max-vertical-offset="4029">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_131054_create_seeker_applied_jobs_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="663" selection-end="663" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="714">
+        <state line="15" column="10" selection-start="254" selection-end="254" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="578">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135103_create_sliders_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="9" selection-start="588" selection-end="588" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="663">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135546_create_slider_quizes_table.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Factory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="39" selection-start="436" selection-end="436" vertical-scroll-proportion="-9.961538" vertical-offset="13" max-vertical-offset="629">
+        <state line="161" column="26" selection-start="4626" selection-end="4632" vertical-scroll-proportion="26.807692" vertical-offset="3366" max-vertical-offset="4131">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135835_create_company_types_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="387" selection-end="387" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+        <state line="29" column="44" selection-start="663" selection-end="663" vertical-scroll-proportion="-13.730769" vertical-offset="136" max-vertical-offset="731">
+          <folding>
+            <element signature="e#41#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="30" selection-start="1282" selection-end="1282" vertical-scroll-proportion="-11.923077" vertical-offset="132" max-vertical-offset="2023">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_135927_create_companies_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="35" selection-start="632" selection-end="632" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="731">
+        <state line="9" column="63" selection-start="231" selection-end="231" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140221_create_experiences_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="431" selection-end="431" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140351_create_job_titles_table.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="381" selection-end="381" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+        <state line="22" column="27" selection-start="599" selection-end="599" vertical-scroll-proportion="0.6619469" vertical-offset="0" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140733_create_education_degree_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_142057_create_slider_quizzes_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="434" selection-end="434" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+        <state line="17" column="39" selection-start="435" selection-end="435" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140713_create_education_level_table.php">
+    <entry file="file://$PROJECT_DIR$/app/JobTitle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="12" selection-start="368" selection-end="391" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_07_140802_create_education_institute_table.php">
+    <entry file="file://$PROJECT_DIR$/app/PaymentPlan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="399" selection-end="399" vertical-scroll-proportion="0.5301455" vertical-offset="0" max-vertical-offset="612">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SliderQuiz.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_150356_create_education_levels_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_150442_create_education_degrees_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="395" selection-end="395" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_08_150511_create_education_institues_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="39" selection-start="372" selection-end="372" vertical-scroll-proportion="-9.153846" vertical-offset="17" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/EducationDegree.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_10_105759_create_universities_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="386" selection-end="386" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_10_110104_create_divisions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="380" selection-end="380" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Division.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="79" selection-start="302" selection-end="315" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="99" selection-end="99" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JobSeeker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="193" selection-end="193" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SeekerPersonalStyle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="107" selection-end="217" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SeekerWorkStyle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="134" selection-end="134" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="31" selection-start="700" selection-end="700" vertical-scroll-proportion="-17.153847" vertical-offset="149" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="41" selection-start="1485" selection-end="1485" vertical-scroll-proportion="-35.384617" vertical-offset="15" max-vertical-offset="2091">
+          <folding>
+            <element signature="e#42#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="31" selection-start="699" selection-end="699" vertical-scroll-proportion="-14.538462" vertical-offset="166" max-vertical-offset="731">
+          <folding>
+            <element signature="e#6#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_10_111757_create_industries_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <folding />
         </state>
       </provider>

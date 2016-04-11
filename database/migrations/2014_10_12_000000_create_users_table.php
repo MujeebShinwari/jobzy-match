@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
 	        $table->integer('zip');
 	        $table->float('lat');
 	        $table->float('long');
+	        $table->string('auth_token', 128);
 	        $table->boolean('is_active');
             $table->rememberToken();
             $table->timestamps();

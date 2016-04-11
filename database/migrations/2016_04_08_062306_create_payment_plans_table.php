@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEducationLevelTable extends Migration
+class CreatePaymentPlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,13 @@ class CreateEducationLevelTable extends Migration
      */
     public function up()
     {
-        Schema::create('education_level', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('payment_plans', function (Blueprint $table) {
+	        $table->increments('id');
+	        $table->tinyInteger('type'); // Job , Screen etc
+	        $table->integer('duration'); // In days
+	        $table->string('price');
 	        $table->string('text');
-            $table->timestamps();
+	        $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ class CreateEducationLevelTable extends Migration
      */
     public function down()
     {
-        Schema::drop('education_level');
+        Schema::drop('payment_plans');
     }
 }

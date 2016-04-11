@@ -1,16 +1,20 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+	Route::group(['prefix' => 'api/v1', 'middleware' => ['web']], function () {
 
-Route::get('/', function () {
-    return view('welcome');
-});
+		//Sign up API
+		// api/v1/users/create
+		Route::post('users/create', 'UsersController@store');
+
+		//Get Sign UP data
+		// api/v1/users/getSignUpData/type
+
+		Route::get('users/getSignUpData/{type}', 'UsersController@getSignUpData');
+		// Route having authentic request should be placed inside this group
+		Route::group(['middleware' => 'verifyToken'], function () {
+
+			// API Url
+
+		});
+
+	});
