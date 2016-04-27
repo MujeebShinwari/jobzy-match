@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeekerWorkStyleTable extends Migration
+class CreateCompanyCulturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateSeekerWorkStyleTable extends Migration
      */
     public function up()
     {
-        Schema::create('seeker_work_style', function (Blueprint $table) {
+        Schema::create('company_cultures', function (Blueprint $table) {
             $table->increments('id');
 	        $table->integer('slider_id'); // FK
-	        $table->integer('seeker_id'); // FK
+	        $table->integer('employer_id'); // FK
+	        $table->integer('company_id'); // FK
 	        $table->string('score');
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ class CreateSeekerWorkStyleTable extends Migration
      */
     public function down()
     {
-        Schema::drop('seeker_work_style');
+        Schema::drop('company_cultures');
     }
 }

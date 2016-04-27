@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeekerPersonalStyleTable extends Migration
+class CreateJobCapabilitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateSeekerPersonalStyleTable extends Migration
      */
     public function up()
     {
-        Schema::create('seeker_personal_style', function (Blueprint $table) {
+        Schema::create('job_capabilities', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('slider_id'); // FK
-	        $table->integer('seeker_id'); // FK
-	        $table->string('score');
+	        $table->integer('job_id'); // FK
+	        $table->string('title');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSeekerPersonalStyleTable extends Migration
      */
     public function down()
     {
-        Schema::drop('seeker_personal_style');
+        Schema::drop('job_capabilities');
     }
 }

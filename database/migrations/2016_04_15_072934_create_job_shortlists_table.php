@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJobCharacteristicsTable extends Migration
+class CreateJobShortlistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateJobCharacteristicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_characteristics', function (Blueprint $table) {
+        Schema::create('job_shortlists', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('job_id'); // FK
-	        $table->string('title');
+	        $table->integer('job_id');
+	        $table->integer('seeker_id');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateJobCharacteristicsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('job_characteristics');
+        Schema::drop('job_shortlists');
     }
 }

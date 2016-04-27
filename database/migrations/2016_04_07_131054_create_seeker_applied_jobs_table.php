@@ -14,9 +14,9 @@ class CreateSeekerAppliedJobsTable extends Migration
     {
         Schema::create('seeker_applied_jobs', function (Blueprint $table) {
             $table->increments('id');
+	        $table->integer('seeker_id'); // FK
 	        $table->integer('job_id'); // FK
-	        $table->string('title'); //FK
-	        $table->text('coverletter');
+	        $table->text('cover_letter');
 	        $table->tinyInteger('is_shortlisted');
 	        $table->float('match_percentage');
 	        $table->float('work_style_percentage');

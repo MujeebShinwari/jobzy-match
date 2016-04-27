@@ -18,13 +18,13 @@
 		public function handle($request, Closure $next)
 		{
 			// Verify user token
-			if ($request->has('token') == false) {
+			if ($request->has('auth_token') == false) {
 				return response()->json([
 					'status_code' => 400,
 					'message'     => 'Authentication token is required'
 				]);
 			} else {
-				$user = User::whereAuthToken($request->get('token'))->first();
+				$user = User::whereAuthToken($request->get('auth_token'))->first();
 				if (!$user) {
 					return response()->json([
 						'status_code' => 401,

@@ -20,7 +20,13 @@
 				$table->string('city');
 				$table->string('state');
 				$table->integer('zip');
+				$table->float('lat');
+				$table->float('long');
 				$table->integer('employer_id'); //FK
+				$table->integer('company_id'); //FK
+				$table->integer('company_quality_rank');
+				$table->integer('candidate_quality_rank');
+				$table->tinyInteger('is_active');
 				$table->timestamps();
 			});
 		}

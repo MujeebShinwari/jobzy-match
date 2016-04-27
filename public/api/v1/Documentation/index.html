@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>JOBZY MATCH APIs</title>
+    <meta name="generator" content="Bootply"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://107.170.224.199/api/v1/Documentation/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="http://107.170.224.199/api/v1/Documentation/css/styles.css" rel="stylesheet">
+    <style type="text/css">
+        .mandatory {
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">JOBZY MATCH APIs Documentation</a>
+        </div>
+
+    </div>
+</nav>
+
+</div><!--/masthead-->
+
+<!--main-->
+<div class="container">
+
+    <div class="row">
+        <!--left-->
+        <div class="col-md-3" id="leftCol">
+            <ul style="width: 280px;" class="nav nav-stacked" id="sidebar">
+                <li><a href="#list">APIs List</a></li>
+                <li><a href="#sec0">1-Get Basic Data</a></li>
+                <li><a href="#sec1">2-Employer Sign Up</a></li>
+                <li><a href="#sec2">3-Job Seeker Sign Up</a></li>
+                <li><a href="#sec3">4-Login</a></li>
+                <li><a href="#sec4">5-Update User</a></li>
+                <li><a href="#sec5">6-Update Job Seeker Experience</a></li>
+                <li><a href="#sec6">7-Update Personal Style</a></li>
+                <li><a href="#sec7">8-Update Work Style</a></li>
+                <li><a href="#sec8">9-Get Job Seeker Matches</a></li>
+                <li><a href="#sec9">10-Get Employer Jobs/Screens</a></li>
+                <li><a href="#sec10">11-Post Job</a></li>
+                <li><a href="#sec11">12-Job Apply</a></li>
+                <li><a href="#sec12">13-Job Watchlist</a></li>
+                <li><a href="#sec13">14-Job Shortlist</a></li>
+                <li><a href="#sec14">15-Update Job Info</a></li>
+                <li><a href="#sec15">16-Update Job Seeker Traits</a></li>
+                <li><a href="#sec16">17-Applied Jobs List</a></li>
+                <li><a href="#sec17">18-Watchlisted Jobs List</a></li>
+                <li><a href="#sec18">19-Job Detail</a></li>
+                <li><a href="#sec19">20-Logout</a></li>
+                <li><a href="#sec20">21-Update Employer Company Info</a></li>
+                <li><a href="#sec21">22-Contact us</a></li>
+            </ul>
+        </div>
+        <!--/left-->
+
+
+        <div class="col-md-9">
+
+
+            <div id="list">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4">
+
+                        <h4>Base URL : http://107.170.224.199/api/v1/ </h4>
+                         <h5><span class="mandatory"> *</span> parameters are mandatory</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="sec0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>1-Get Basic Data</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td>
+                                    <h4>For Employer:</h4>
+                                    <b>Base URL</b> + users/getBasicData/employer
+                                     <h4>For Job Seeker:</h4>
+                                    <b>Base URL</b> + users/getBasicData/seeker
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+                                <td>
+                                    Empty
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+                                    <pre>
+                                        <code>
+ {
+    "status_code": 200,
+    "message": "OK",
+    "result": {
+        "job_titles": [
+            {
+                "id": VALUE ,
+                "text": "STRING VALUE"
+            }
+        ],
+        "payment_plans": [
+            {
+                "id": VALUE,
+                "type": VALUE ( will be updated later according to plan type ),
+                "duration": VALUE (in days),
+                "price": "STRING VALUE",
+                "text": "STRING VALUE"
+            }
+        ],
+        "slider": [
+            {
+                "id":  VALUE,
+                "type":  VALUE,
+                "text": "STRING VALUE",
+                "upper_limit_text": "STRING VALUE",
+                "lower_limit_text": "STRING VALUE",
+                "slider_quiz": [
+                    {
+                        "id":  VALUE,
+                        "slider_id":  VALUE,
+                        "question": "STRING VALUE"
+                    }
+                ]
+            }
+        ],
+        "companies": [
+            {
+                "id": VALUE,
+                "name": "STRING VALUE",
+                "desc": "STRING VALUE",
+                "logo": "STRING VALUE"
+            }
+        ],
+ <h4>For Employer (extra data )</h4>
+         "divisions": [
+            {
+                "id": VALUE,
+                "name": "STRING VALUE"
+            }
+        ],
+        "industries": [
+            {
+                "id": VALUE,
+                "name": "STRING VALUE"
+            }
+        ],
+        "skills": [
+            {
+                "id": VALUE,
+                "title": "STRING VALUE"
+            }
+        ],
+        "capabilities": [
+            {
+                "id": VALUE,
+                "title": "STRING VALUE"
+            }
+        ],
+        "certificates": [
+            {
+                "id": VALUE,
+                "title": "STRING VALUE"
+            }
+        ],
+ <h4>For Job Seeker (extra data)</h4>
+        "education_level": [
+            {
+                "id": VALUE,
+                "text": "STRING VALUE"
+            }
+        ],
+        "education_degree": [
+            {
+                "id": VALUE,
+                "text": "STRING VALUE"
+            }
+        ],
+        "universities": [
+            {
+                "id": VALUE,
+                "name": "STRING VALUE"
+            }
+        ]
+}
+                                        </code>
+                                    </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+   <pre>
+
+ {
+    "status_code": 500 OR 404,
+    "message": "Error message",
+ }
+    </pre>                            </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+<hr>
+             <div id="sec1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>2-Employer Sign Up</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/signUp</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                    <ul class="list-group">
+                                    <li class="list-group-item">type<span class="mandatory"> *</span></li>
+                                    <pre>
+ For Employer => employer
+                                    </pre>
+                                    <li class="list-group-item">first_name <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">last_name <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">password <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">email <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">city</li>
+                                    <li class="list-group-item">state</li>
+                                    <li class="list-group-item">zip</li>
+                                    <li class="list-group-item">lat</li>
+                                    <li class="list-group-item">long</li>
+                                    <li class="list-group-item">phone</li>
+                                    <li class="list-group-item">division_id</li>
+                                    <li class="list-group-item">company_desc</li>
+                                    <li class="list-group-item">industry_id</li>
+                                    <li class="list-group-item">company_name</li>
+                                    <li class="list-group-item">company_logo [FILE]</li>
+                                    <li class="list-group-item">company_cultures (JSON)
+
+                                    <pre>
+[
+{
+    "slider_id": VALUE,
+    "score": VALUE
+}
+]
+                                    </pre>
+                                    </li>
+                                        </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Login successful",
+    "result": {
+        "user_id": VALUE,
+        "auth_token": "STRING VALUE"
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+      <h4>In case of validation error other wise this won't appear</h4>
+     "errors": {
+        "first_name": [
+            "The first name must be at least 3 characters."
+        ],
+        "last_name": [
+            "The last name field is required."
+        ],
+        "email": [
+            "The email has already been taken."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>3-Job Seeker Sign Up</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/signUp</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                    <ul class="list-group">
+                                    <li class="list-group-item">type<span class="mandatory"> *</span></li>
+                                    <pre>
+ For Job Seeker => seeker
+                                    </pre>
+                                    <li class="list-group-item">first_name <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">last_name <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">password <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">email <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">city</li>
+                                    <li class="list-group-item">state</li>
+                                    <li class="list-group-item">zip</li>
+                                    <li class="list-group-item">lat</li>
+                                    <li class="list-group-item">long</li>
+                                    <li class="list-group-item">phone</li>
+                                    <li class="list-group-item">target_job_title</li>
+                                    <li class="list-group-item">target_job_location</li>
+                                    <li class="list-group-item">recent_job_title</li>
+                                    <li class="list-group-item">recent_company</li>
+                                    <li class="list-group-item">resume [FILE]</li>
+                                    <li class="list-group-item">target_salary</li>
+                                    <li class="list-group-item">education_level_id</li>
+                                    <li class="list-group-item">degree_id</li>
+                                    <li class="list-group-item">recent_institution_attended_id</li>
+                                    <li class="list-group-item">is_block_recent_company</li>
+                                    <li class="list-group-item">personal_styles (JSON)
+
+                                    <pre>
+[
+{
+    "slider_id": VALUE,
+    "score": VALUE
+}
+]
+                                    </pre>
+                                        </li>
+                                    <li class="list-group-item">work_styles (JSON)
+                                    <pre>
+[
+{
+    "slider_id": VALUE,
+    "score": VALUE
+}
+]
+                                    </pre>
+                                        </li>
+                                        </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Login successful",
+    "result": {
+        "user_id": VALUE,
+        "auth_token": "STRING VALUE"
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+      <h4>In case of validation error other wise below won't appear</h4>
+     "errors": {
+        "first_name": [
+            "The first name must be at least 3 characters."
+        ],
+        "last_name": [
+            "The last name field is required."
+        ],
+        "email": [
+            "The email has already been taken."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>4-Login</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/login/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">email<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">password<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Login successful",
+    "result": {
+        "user_id": VALUE,
+        "auth_token": "STRING VALUE"
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>5-Update User Info</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/updateUserInfo/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">first_name</li>
+                                    <li class="list-group-item">last_name</li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Profile updated successfully"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>6-Update Job Seeker Experience</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/updateJobSeekerExperience/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">target_job_title</li>
+                                    <li class="list-group-item">recent_company</li>
+                                    <li class="list-group-item">education_level_id</li>
+                                    <li class="list-group-item">education_degree_id</li>
+                                    <li class="list-group-item">recent_institution_attended_id</li>
+                                    <li class="list-group-item">is_block_recent_company_id</li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Experience updated successfully"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>7-Update Personal Style</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/updatePersonalStyle/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                     <li class="list-group-item">personal_styles (JSON)
+
+                                    <pre>
+[
+{
+    "slider_id": VALUE,
+    "score": VALUE
+}
+]
+                                    </pre>
+                                    </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "personal style updated successfully"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>8-Update Work Style</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/updateSeekerWorkStyle/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                     <li class="list-group-item">work_styles (JSON)
+
+                                    <pre>
+[
+{
+    "slider_id": VALUE,
+    "score": VALUE
+}
+]
+                                    </pre>
+                                    </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "work style updated successfully"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>9-Get Job Seeker Matches</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + search/getJobSeekerMatches/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                     <li class="list-group-item">target_job_title</li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": [
+        {
+            "total_score": VALUE,
+            "is_applied": 0 OR 1 ,
+            "is_watched": 0 OR 1,
+            "job_id": VALUE,
+            "job_title": "STRING VALUE",
+            "job_description": "STRING VALUE",
+            "company_quality_rank": VALUE,
+            "lat": VALUE,
+            "long": VALUE,
+            "city": "STRING VALUE",
+            "state": "STRING VALUE",
+            "zip":  VALUE,
+            "title_score":  VALUE,
+            "personal_style_score":  VALUE,
+            "work_style_score":  VALUE,
+            "distance":  VALUE,
+            "minimum_education_score":  VALUE,
+            "job_properties_score":  VALUE
+        },
+    "quote": [
+        {
+            "id": VALUE,
+            "text": "STRING VALUE"
+        }
+    ]
+    ]
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>10-Get Employer Jobs/Screens</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + search/getEmployerJobAndScreens/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": [
+        {
+            "job_id": VALUE,
+            "job_title": "STRING VALUE",
+            "desc": "STRING VALUE",
+            "zip":  VALUE,
+            "state": "STRING VALUE",
+            "city": "STRING VALUE",
+            "job_type":  VALUE,
+            "lat":  VALUE,
+            "long":  VALUE,
+            "payment_duration": "STRING VALUE (in days)",
+            "payment_expiry_days_left":  VALUE,
+            "applicants_count":  VALUE,
+            "shortlist_count":  VALUE,
+            "matches_count":  VALUE
+        }
+    ]
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="sec10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>11-Post Job</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/postJob</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                    <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">type<span class="mandatory"> *</span>
+<pre>
+ For Job => 1,
+ For Screen => 0
+</pre>
+                                    </li>
+                                    <li class="list-group-item">title <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">city <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">state <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">zip <span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">desc</li>
+                                    <li class="list-group-item">lat</li>
+                                    <li class="list-group-item">long</li>
+                                    <li class="list-group-item">company_name</li>
+                                    <li class="list-group-item">seeker_traits (JSON)
+
+                                    <pre>
+[
+    {
+    "slider_id": VALUE,
+    "score": VALUE
+    }
+]
+                                    </pre>
+                                        </li>
+                                    <li class="list-group-item">certifications (JSON)
+                                    <pre>
+[
+    {
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                        <li class="list-group-item">skills (JSON)
+                                    <pre>
+[
+    {
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                        <li class="list-group-item">capabilities (JSON)
+                                    <pre>
+[
+    {
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                        </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Job created successfully",
+    "result": {
+        "job_id": VALUE,
+        "certifications": {
+            "title": "STRING VALUEe",
+            "job_id":  VALUE,
+            "id":  VALUE
+        },
+        "skills": {
+            "title": "STRING VALUE",
+            "job_id":  VALUE,
+            "id":  VALUE
+        },
+        "capabilities": {
+            "title": "STRING VALUE",
+            "job_id":  VALUE,
+            "id":  VALUE
+        }
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+      <h4>In case of validation error other wise below won't appear</h4>
+      "errors": {
+        "title": [
+            "The title field is required."
+        ],
+        "type": [
+            "The type field is required."
+        ],
+        "city": [
+            "The city field is required."
+        ],
+        "state": [
+            "The state field is required."
+        ],
+        "zip": [
+            "The zip field is required."
+        ]
+    }
+    }
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec11">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>12-Job Apply</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/jobApply/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+
+                                     <li class="list-group-item">cover_letter</li>
+                                     <li class="list-group-item">flag<span class="mandatory"> *</span>
+<pre>
+1 => Apply for a job,
+0 => Cancel apply for already applied job
+ </pre>
+                                     </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+         <h5>Apply for job</h5>
+{
+    "status_code": 200,
+    "message": "You have successfully applied for this job"
+}
+       <h5>Cancel Apply for job</h5>
+{
+    "status_code": 200,
+    "message": "Apply canceled successfully"
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>13-Job Watchlist</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/jobWatchlist/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+                                     <li class="list-group-item">flag<span class="mandatory"> *</span>
+<pre>
+1 => Add job to watchlist,
+0 => Remove job from watchlist
+ </pre>
+                                     </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+         <h5>Add job to watchlist</h5>
+{
+    "status_code": 200,
+    "message": "job added to watchlist"
+}
+       <h5>Remove job from watchlist</h5>
+{
+    "status_code": 200,
+    "message": "job removed from watchlist"
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec13">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>14-Job Shortlist (shortlist users for job)</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/jobShortlist/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">user_id<span class="mandatory"> *</span></li>
+                                     <li class="list-group-item">flag<span class="mandatory"> *</span>
+<pre>
+1 => Add to shortlist,
+0 => Remove from shortlist
+ </pre>
+                                     </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+         <h5>Add User to shortlist</h5>
+{
+    "status_code": 200,
+    "message": "User added to shortlist"
+}
+       <h5>Remove User from shortlist</h5>
+{
+    "status_code": 200,
+    "message": "User removed from shortlist"
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec14">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>15-Update Job Info</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/updateJobInfo/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+ <li class="list-group-item">certifications (JSON)
+                                    <pre>
+[
+    {
+    "id": "VALUE",
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                        <li class="list-group-item">skills (JSON)
+                                    <pre>
+[
+    {
+    "id": "VALUE",
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                        <li class="list-group-item">capabilities (JSON)
+                                    <pre>
+[
+    {
+    "id": "VALUE",
+    "title": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Job  certificates, skills and capabilities updated successfully "
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec15">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>16-Update Job Seeker Traits</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/updateSeekerTraits/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+ <li class="list-group-item">seeker_traits (JSON)
+                                    <pre>
+[
+    {
+    "slider_id": "VALUE",
+    "score": "STRING VALUE"
+    }
+]
+                                    </pre>
+                                        </li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "seeker traits updated successfully"
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec16">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>17-Get My applied Job List</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/myAppliedJobsList/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": [
+        {
+            "job_id": VALUE,
+            "cover_letter": "STRING VALUE"
+        }
+    ]
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec17">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>18-Get My watchlisted Jobs List</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/myWatchlistedJobsList/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": [
+        {
+            "job_id": VALUE
+        }
+    ]
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+     <h5>Watchlist Empty</h5>
+{
+    "status_code": 404,
+    "message": "watchlist empty"
+}
+     <h5>Any other Error case</h5>
+{
+    "status_code": 500,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec18">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>19-Get job detail</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/getJobDetail/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": {
+        "id":  VALUE,
+        "type":  VALUE,
+        "title": "STRING VALUE",
+        "desc": "STRING VALUE",
+        "city": "STRING VALUE",
+        "state": "STRING VALUE",
+        "zip":  VALUE,
+        "lat":  VALUE,
+        "long":  VALUE,
+        "company_id": VALUE,
+        "skills": [
+            {
+                "id":  VALUE,
+                "job_id":  VALUE,
+                "title": "STRING VALUE"
+            }
+        ],
+        "capabilities": [
+            {
+                "id":  VALUE,
+                "job_id":  VALUE,
+                "title": "STRING VALUE"
+            }
+        ],
+        "certificates": [
+            {
+                "id": VALUE,
+                "job_id": VALUE,
+                "title": "STRING VALUE"
+            }
+        ]
+    }
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <div id="sec19">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>20-Logout</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/logout/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+                                <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Logout successful"
+}
+
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+  <hr>
+             <div id="sec20">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>21-Update User Info</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/updateEmployerCompanyInfo/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">company_name<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">division_id</li>
+                                    <li class="list-group-item">company_desc</li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Employer company info updated successfully"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec21">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>22-Contact us</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + users/contact/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">name</li>
+                                    <li class="list-group-item">email</li>
+                                    <li class="list-group-item">phone</li>
+                                    <li class="list-group-item">message</li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "Thank you for contacting us , we will get back to you ASAP"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        <!--/right-->
+    </div>
+        </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+
+<!-- script references -->
+<script src="http://107.170.224.199/api/v1/Documentation/js/jquery.min.js"></script>
+<script src="http://107.170.224.199/api/v1/Documentation/js/bootstrap.min.js"></script>
+<script src="http://107.170.224.199/api/v1/Documentation/js/scripts.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

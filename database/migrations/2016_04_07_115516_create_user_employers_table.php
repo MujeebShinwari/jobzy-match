@@ -18,7 +18,6 @@ class CreateUserEmployersTable extends Migration
 	        $table->integer('company_id'); //FK
 	        $table->integer('division_id'); //FK
 	        $table->integer('industry_id'); //FK
-	        $table->text('company_desc'); //FK
             $table->timestamps();
         });
     }

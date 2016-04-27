@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Division extends Model
 {
-    //
+	protected $hidden = [
+		'created_at',
+		'updated_at'
+	];
 }
