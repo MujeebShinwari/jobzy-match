@@ -2,7 +2,7 @@
 
 	Route::group(['prefix' => 'api/v1', 'middleware' => ['web']], function () {
 
-
+		Route::get('testResumeMatches', 'UsersController@processSeekerResumeMatches');
 		//user signup
 		Route::post('users/signUp', 'UsersController@signUp');
 
@@ -14,6 +14,7 @@
 		// Route having authentic request should be placed inside this group
 		Route::group(['middleware' => 'verifyToken'], function () {
 			Route::get('search/getJobSeekerMatches', 'UsersController@getJobSeekerMatches');
+			Route::get('search/getJobMatches', 'UsersController@getJobMatches');
 
 			Route::get('users/logout', 'UsersController@logout');
 
@@ -46,6 +47,8 @@
 			Route::get('jobs/updateSeekerTraits', 'UsersController@updateSeekerTraits');
 
 			Route::get('jobs/updateJobInfo', 'UsersController@updateJobInfo');
+
+			Route::get('jobs/updateJobLastSeenDate', 'UsersController@updateJobLastSeenDate');
 
 			Route::get('jobs/jobApply', 'UsersController@applyForJob');
 

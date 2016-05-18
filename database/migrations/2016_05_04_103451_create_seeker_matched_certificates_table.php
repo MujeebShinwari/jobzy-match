@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJobMatchesTable extends Migration
+class CreateSeekerMatchedCertificatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateJobMatchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_matches', function (Blueprint $table) {
+        Schema::create('seeker_matched_certificates', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('job_id'); //FK
 	        $table->integer('seeker_id'); //FK
-	        $table->float('match_score');
+	        $table->integer('certificate_id'); //FK
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateJobMatchesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('job_matches');
+        Schema::drop('seeker_matched_certificates');
     }
 }

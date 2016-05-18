@@ -38,6 +38,9 @@
 			mkdir($dir, 777, TRUE);
 		}
 
-		$file->move($dir, $fileName);
-		return $fileName;
+		if($file->move($dir, $fileName)){
+			return $fileName;
+		}
+		return false;
+
 	}

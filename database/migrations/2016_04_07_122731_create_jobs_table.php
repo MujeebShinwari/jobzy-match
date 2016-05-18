@@ -26,6 +26,12 @@
 				$table->integer('company_id'); //FK
 				$table->integer('company_quality_rank');
 				$table->integer('candidate_quality_rank');
+				$table->integer('total_matches_count')->default(0);
+				$table->integer('new_matches_count')->default(0);
+				$table->integer('applicants_count')->default(0);
+				$table->integer('shortlisted_applicants_count')->default(0);
+				$table->dateTime('last_seen_date');
+				$table->date('expiry_date');
 				$table->tinyInteger('is_active');
 				$table->timestamps();
 			});

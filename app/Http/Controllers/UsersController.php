@@ -13,6 +13,7 @@
 	use App\Industry;
 	use App\JobCapability;
 	use App\JobCertificate;
+	use App\JobMatch;
 	use App\JobSeeker;
 	use App\JobShortlist;
 	use App\JobSkill;
@@ -20,6 +21,7 @@
 	use App\PaymentPlan;
 	use App\Quote;
 	use App\SeekerPersonalStyle;
+	use App\SeekerResumeMatch;
 	use App\SeekerTrait;
 	use App\Skill;
 	use App\Slider;
@@ -44,90 +46,103 @@
 		{
 
 			$inputs = $request->all();
-			try {
-				//return $request->all();
-				$validator = Validator::make($inputs, [
-					'first_name' => 'required|min:3',
-					'last_name'  => 'required|min:3',
-					'email'      => 'required|unique:users,email|email',
-					'password'   => 'required',
-					'type'       => 'required',
-				]);
+			//	try {
+			//return $request->all();
+			$validator = Validator::make($inputs, [
+				'first_name' => 'required|min:3',
+				'last_name'  => 'required|min:3',
+				'email'      => 'required|unique:users,email|email',
+				'password'   => 'required',
+				'type'       => 'required',
+			]);
 
-				if ($validator->fails()) {
-					return apiResponse(401, 'Please provide valid inputs', $validator->messages());
-				}
-
-				$parentUser = $user->create($inputs);
-
-
-				//Job seeker sign up
-
-				if ($inputs['type'] == 'seeker') {
-
-					//upload job seeker resume
-					if ($request->hasFile('resume')) {
-						$inputs['resume'] = upload($request->file('resume'));
-					}
-
-					$childUser = $parentUser->jobSeeker()->create($inputs);
-
-					$personalStyles = json_decode($inputs['personal_styles']);
-					foreach ($personalStyles as $personalStyle) {
-						$parentUser->seekerPersonalStyle()->create([
-							'slider_id' => $personalStyle->slider_id,
-							'score'     => $personalStyle->score
-						]);
-					}
-					$workStyles = json_decode($inputs['work_styles']);
-					foreach ($workStyles as $workStyle) {
-						$parentUser->seekerWorkStyle()->create([
-							'slider_id' => $workStyle->slider_id,
-							'score'     => $workStyle->score
-						]);
-					}
-
-					$parentUser = [
-						'personal_styles' => $personalStyles,
-						'work_styles'     => $workStyles
-					];
-				}
-				if ($inputs['type'] == 'employer') {
-					$inputs['name'] = $inputs['company_name'];
-					$inputs['desc'] = $inputs['company_desc'];
-					$company        = Company::whereName($inputs['name'])->first();
-
-					if (!$company) {
-						//upload company logo
-						if ($request->hasFile('company_logo')) {
-							$inputs['logo'] = upload($request->file('company_logo'));
-						}
-						$company = Company::create($inputs);
-					}
-
-					$inputs['company_id'] = $company->id;
-
-					$childUser = $parentUser->employer()->create($inputs);
-
-					$companyCultures = json_decode($inputs['company_cultures']);
-					foreach ($companyCultures as $companyCulture) {
-						$parentUser->employerCompanyCulture()->create([
-							'slider_id'  => $companyCulture->slider_id,
-							'score'      => $companyCulture->score,
-							'company_id' => $childUser->company_id
-						]);
-					}
-				}
-
-				if ($parentUser) {
-					//Login after successful registration
-					return $this->login();
-				}
-
-				return apiResponse(500, 'User cannot be registered', null);
-			} catch (Exception $ex) {
-				return apiResponse(403, 'unknown error occurred', null, null);
+			if ($validator->fails()) {
+				return apiResponse(401, 'Please provide valid inputs', $validator->messages());
 			}
+
+			$parentUser = $user->create($inputs);
+
+
+			//Job seeker sign up
+
+			if ($inputs['type'] == 'seeker') {
+
+				//upload job seeker resume
+				if ($request->hasFile('resume')) {
+					$inputs['resume'] = upload($request->file('resume'));
+					if ($inputs['resume'] != false) {
+						$file       = public_path() . '/uploads/' . $inputs['resume'];
+						$resumeText = $this->readWordDocument($file);
+						if ($resumeText !== false) {
+							$seekerId = $parentUser->id;
+							$this->processSeekerResumeMatches($seekerId, $resumeText);
+						}
+					}
+				}
+
+				$childUser = $parentUser->jobSeeker()->create($inputs);
+
+				$personalStyles = json_decode($inputs['personal_styles']);
+				foreach ($personalStyles as $personalStyle) {
+					$parentUser->seekerPersonalStyle()->create([
+						'slider_id' => $personalStyle->slider_id,
+						'score'     => $personalStyle->score
+					]);
+				}
+				$workStyles = json_decode($inputs['work_styles']);
+				foreach ($workStyles as $workStyle) {
+					$parentUser->seekerWorkStyle()->create([
+						'slider_id' => $workStyle->slider_id,
+						'score'     => $workStyle->score
+					]);
+				}
+
+				$parentUser = [
+					'personal_styles' => $personalStyles,
+					'work_styles'     => $workStyles
+				];
+			}
+			if ($inputs['type'] == 'employer') {
+				$inputs['name'] = $inputs['company_name'];
+				$inputs['desc'] = $inputs['company_desc'];
+				$company        = Company::whereName($inputs['name'])->first();
+
+				if (!$company) {
+					//upload company logo
+					if ($request->hasFile('company_logo')) {
+						$inputs['logo'] = upload($request->file('company_logo'));
+					}
+					$company = Company::create($inputs);
+				}
+
+				$inputs['company_id'] = $company->id;
+
+				$childUser = $parentUser->employer()->create($inputs);
+
+				$companyCultures = json_decode($inputs['company_cultures']);
+				foreach ($companyCultures as $companyCulture) {
+					$parentUser->employerCompanyCulture()->create([
+						'slider_id'  => $companyCulture->slider_id,
+						'score'      => $companyCulture->score,
+						'company_id' => $childUser->company_id
+					]);
+				}
+			}
+
+
+			//Search Resume for matching skill and other properties
+			if ($inputs['type'] == 'seeker') {
+
+			}
+			if ($parentUser) {
+				//Login after successful registration
+				return $this->login();
+			}
+
+			return apiResponse(500, 'User cannot be registered', null);
+			/*} catch (Exception $ex) {
+				return apiResponse(403, 'unknown error occurred', null, null);
+			}*/
 
 		}
 
@@ -254,7 +269,6 @@
 				}
 
 				$job = Job::find($inputs['job_id'])->first();
-				//
 
 				$jobSkills       = $job->jobSkill()->get();
 				$jobCapabilities = $job->jobCapability()->get();
@@ -270,19 +284,123 @@
 				array_pull($job, 'candidate_quality_rank');
 				array_pull($job, 'employer_id');
 
-
-				return apiResponse(200, 'OK', null, $job);
-
+				if ($job) {
+					return apiResponse(200, 'OK', null, $job);
+				}
 				return apiResponse(500, 'error occurred', null, null);
 			} catch (Exception $ex) {
 				return apiResponse(403, 'unknown error occurred', null, null);
 			}
 		}
 
+		public function processSeekerResumeMatches($seekerId, $resumeText)
+		{
+
+			/*
+			 * Match Resume text with every table in below array (matching column name and updating columns and table name everything
+			 * is passed dynamically to next function
+			 *
+			*/
+
+			/*$file       = public_path() . '/uploads/7842572b68aea8a2a.docx';
+			echo $resumeText = $this->readWordDocument($file);*/
+
+			$matchingTables = array(
+				array(
+					"table_name"                 => "skills",
+					"column_name"                => "title",
+					"resume_count_column"        => "skill_match_count",
+					"seeker_property_table_name" => "seeker_matched_skills",
+					"foreign_key_name"           => "skill_id"
+				),
+				array(
+					"table_name"                 => "certificates",
+					"column_name"                => "title",
+					"resume_count_column"        => "certificate_match_count",
+					"seeker_property_table_name" => "seeker_matched_certificates",
+					"foreign_key_name"           => "certificate_id"
+				),
+				array(
+					"table_name"                 => "capabilities",
+					"column_name"                => "title",
+					"resume_count_column"        => "capability_match_count",
+					"seeker_property_table_name" => "seeker_matched_capabilities",
+					"foreign_key_name"           => "capability_id"
+				),
+				array(
+					"table_name"                 => "companies",
+					"column_name"                => "name",
+					"resume_count_column"        => "company_match_count",
+					"seeker_property_table_name" => "",
+					"foreign_key_name"           => ""
+				), array(
+					"table_name"                 => "education_institutes",
+					"column_name"                => "text",
+					"resume_count_column"        => "institute_match_count",
+					"seeker_property_table_name" => "",
+					"foreign_key_name"           => ""
+				),
+				array(
+					"table_name"                 => "leaderships",
+					"column_name"                => "title",
+					"resume_count_column"        => "leadership_match_count",
+					"seeker_property_table_name" => "",
+					"foreign_key_name"           => ""
+				),
+				array(
+					"table_name"                 => "extracurriculars",
+					"column_name"                => "title",
+					"resume_count_column"        => "extracurricular_match_count",
+					"seeker_property_table_name" => "",
+					"foreign_key_name"           => ""
+				),
+			);
+			foreach ($matchingTables as $t) {
+				$this->updateResumeMatchCount($seekerId, $t['table_name'], $t['column_name'], $t['resume_count_column'],
+					$t['seeker_property_table_name'], $t['foreign_key_name'], $resumeText);
+			}
+		}
+
+		public function updateResumeMatchCount($seekerId, $tableName, $matchingColumnName, $updateColumnName,
+		                                       $seekerPropertyTableName,
+		                                       $foreignKeyName,
+		                                       $resumeText)
+		{
+			/*for($i=0;$i<1000;$i++){
+				if($tableName=='extracurriculars' || $tableName == 'leaderships' || $tableName == 'education_institutes')
+				DB::insert("INSERT INTO $tableName SET $matchingColumnName='" . $resumeText . "'");
+		}*/
+
+			$data = DB::select("SELECT COUNT(*) as count FROM $tableName WHERE '" . $resumeText . "'
+			LIKE CONCAT('%'," . $matchingColumnName . ",'%')");
+
+			$count = $data[0]->count;
+			if ($count > 0) {
+				if ($tableName == 'skills' || $tableName == 'certificates' || $tableName == 'capabilities') {
+					DB::insert("
+						INSERT INTO " . $seekerPropertyTableName . " (seeker_id,$foreignKeyName,title)
+						SELECT $seekerId,id,title  FROM $tableName WHERE '" . $resumeText . "' LIKE CONCAT('%'," . $matchingColumnName . ",
+						'%')
+						");
+				}
+			}
+			$checkResumeMatch = SeekerResumeMatch::where('seeker_id', $seekerId)->first();
+			if ($checkResumeMatch) {
+				//update resume match count
+				DB::update("UPDATE seeker_resume_matches SET   $updateColumnName='" . $count . "' WHERE `seeker_id`='" . $seekerId . "'");
+			} else {
+				//create resume match count
+				DB::insert("INSERT INTO seeker_resume_matches SET `seeker_id`='" . $seekerId . "',
+				$updateColumnName='" . $count . "'");
+			}
+
+
+		}
+
 		public function getEmployerJobAndScreens()
 		{
 
-			$inputs = request()->all();
+//			$inputs = request()->all();
 			try {
 				$data = DB::select("SELECT j.`id` AS job_id , j.`title` AS job_title,j.`desc`,j.`zip`,j.`state`,j.`city`,
 				j.`type` AS job_type,j.`lat`,j.`long`,jp.`duration` AS payment_duration,
@@ -304,7 +422,7 @@
 			}
 		}
 
-		function calculateSeekerJobMatchesDistance($lat, $long)
+		function calculateSeekerMatchesDistance($lat, $long)
 		{
 			//Seeker Lat Long is
 			//$lat , $long
@@ -315,37 +433,24 @@
 	0) as distance ";
 		}
 
+		function calculateJobMatchesDistance($lat, $long)
+		{
+			//Seeker Lat Long is
+			//$lat , $long
+			return " ROUND(1000 * 6371 * 2 * atan(SQRT(SIN(RADIANS(u.`lat` - $lat)/2) * SIN(RADIANS(u.`lat` - $lat)/2) + COS(RADIANS(u
+			.`lat`)) * COS(RADIANS($lat)) * SIN(RADIANS(u.`long` - $long)/2) * SIN(RADIANS(u.`long` - $long)/2)),
+			SQRT(1-SIN(RADIANS(u.`lat` - $lat)/2) * SIN(RADIANS(u.`lat` - $lat)/2) + COS(RADIANS(u.`lat`)) * COS(RADIANS($lat)) * SIN
+			(RADIANS(u.`long` - $long)/2) * SIN(RADIANS(u.`long` - $long)/2))),
+	0) as distance ";
+		}
+
 		public function getJobSeekerMatches()
 		{
 
-//SELECT CASE WHEN 'software developer' LIKE 'software dveloper' THEN 5  WHEN 'software developer' LIKE '%software%' THEN 3  WHEN 'software developer' LIKE '%developer%' THEN 3 ELSE 0 END AS result
-			//query
-
-			/*SELECT
-(result.company_quality_rank +
-result.personalStyleScore +
-result.workStyleScore +
-result.minimumEducationScore +
-result.jobPropertiesScore) AS totalScore,result.* FROM
-
-(SELECT  CASE WHEN (SELECT COUNT(*) FROM seeker_applied_jobs ap WHERE ap.`job_id`=j.`id` AND ap.`seeker_id`=2) AS isApplied > 0 THEN 1 ELSE 0 END,j.`id` AS jobId,j.`title` AS jobTitle,j.`desc` AS jobDescription,j.`company_quality_rank`,j.`lat`,j.`long`,
-j.`city`,j.`state`,j.`zip`,
-CASE WHEN j.`title` LIKE 'software' THEN 5 ELSE 0 END AS titleScore,
-ROUND(SUM(5-(2*(ABS(st.`score`-sps.`score`))))/COUNT(st.`slider_id`)) AS personalStyleScore,
-ROUND(SUM(5-(2*(ABS(cc.`score`-sws.`score`))))/COUNT(st.`slider_id`)) AS workStyleScore,
-ROUND(1000 * 6371 * 2 * ATAN(SQRT(SIN(RADIANS(j.`lat` - 31.4004)/2) * SIN(RADIANS(j.`lat` - 31.4004)/2) + COS(RADIANS(j
-.`lat`)) * COS(RADIANS(31.4004)) * SIN(RADIANS(j.`long` - 74.1689)/2) * SIN(RADIANS(j.`long` - 74.1689)/2)),
-SQRT(1-SIN(RADIANS(j.`lat` - 31.4004)/2) * SIN(RADIANS(j.`lat` - 31.4004)/2) + COS(RADIANS(j.`lat`)) * COS(RADIANS(31.4004)) * SIN
-(RADIANS(j.`long` - 74.1689)/2) * SIN(RADIANS(j.`long` - 74.1689)/2))),
-0) AS distance , 0 AS minimumEducationScore,0 AS jobPropertiesScore
-FROM jobs j
-JOIN seeker_traits st ON j.`id`=st.`job_id`
-JOIN seeker_personal_styles sps ON st.`slider_id` = sps.`slider_id`
-JOIN company_cultures cc ON j.`company_id`=cc.`company_id` AND cc.`employer_id` = j.`employer_id`
-JOIN seeker_workplace_styles sws ON cc.`slider_id`=sws.`slider_id`
-GROUP BY j.`id`
-HAVING distance < 80450 ) AS result  */
+			/*			INSERT INTO tablename (jobseekerId,companyId,companyName)
+			SELECT 12,id, FROM companies WHERE  'Suave solutions is the sf '   LIKE CONCAT('%',`name`,'%')*/
 			$inputs = request()->all();
+
 
 			//explode by space
 			$titleArray      = explode(' ', $inputs['target_job_title']);
@@ -356,24 +461,30 @@ HAVING distance < 80450 ) AS result  */
 				}
 			}
 			$titleMatchQuery .= " ELSE 0 END AS title_score";
-			try {
-				$calcDistance = $this->calculateSeekerJobMatchesDistance($this->user->lat, $this->user->long);
+			//try {
+			$calcDistance = $this->calculateSeekerMatchesDistance($this->user->lat, $this->user->long);
 
-				$data = DB::select("SELECT
+			$data         = DB::select("SELECT
  							(result.company_quality_rank +
  							result.personal_style_score +
  							result.work_style_score +
  							result.minimum_education_score +
  							result.job_properties_score) AS total_score,result.* FROM
-
  				(SELECT
  				CASE WHEN (SELECT COUNT(*) FROM seeker_applied_jobs ap WHERE ap.`job_id`=j.`id` AND ap.`seeker_id`='" . $this->user->id . "')
- 				  > 0
- 				THEN 1 ELSE 0 END AS is_applied,
-CASE WHEN (SELECT COUNT(*) FROM seeker_watchlists sw WHERE sw.`job_id`=j.`id` AND sw.`seeker_id`='" . $this->user->id . "')  > 0 THEN 1
-ELSE 0 END AS is_watched,
- 				j.`id` as job_id,j.`title` as job_title,j.`desc` as job_description,j.`company_quality_rank`,j.`lat`,j.`long`,
- 				j.`city`,j.`state`,j.`zip`,
+ 				  > 0 THEN 1 ELSE 0 END AS is_applied,
+				CASE WHEN (SELECT COUNT(*) FROM seeker_watchlists sw WHERE sw.`job_id`=j.`id` AND sw.`seeker_id`='" . $this->user->id . "')
+				> 0 THEN 1 ELSE 0 END AS is_watched,
+ 				j.`id` as job_id,
+ 				j.`title` as job_title,
+ 				j.`desc` as job_description,
+ 				j.`company_quality_rank`,
+ 				j.`lat`,
+ 				j.`long`,
+ 				j.`city`,
+ 				j.`state`,
+ 				j.`zip`,
+ 				j.`type`,
  				$titleMatchQuery,
 				ROUND(SUM(5-(2*(ABS(st.`score`-sps.`score`))))/COUNT(st.`slider_id`)) AS personal_style_score,
 				ROUND(SUM(5-(2*(ABS(cc.`score`-sws.`score`))))/COUNT(st.`slider_id`)) AS work_style_score,
@@ -384,23 +495,149 @@ ELSE 0 END AS is_watched,
                 JOIN company_cultures cc ON j.`company_id`=cc.`company_id` AND cc.`employer_id` = j.`employer_id`
                 JOIN seeker_workplace_styles sws ON cc.`slider_id`=sws.`slider_id`
                 GROUP BY j.`id`
-                HAVING distance < 80450 ) AS result");
-				/*			return DB::select("SELECT j.`title`,j.`lat`,j.`long`, $calcDistance from jobs j");
-							return Job::where('title', 'LIKE', '%' . $inputs['target_job_title'] . '%')->get();
-							$user = $this->user;
+                HAVING distance < 80450 ) AS result WHERE result.`type`=1");
+			$random_quote = Quote::orderBy(DB::raw('RAND()'))->first();
+			//Store job seeker matches
+			foreach ($data as $d) {
 
-							$userSeeker = $this->user->jobSeeker()->whereUserId($this->user->id)->first();
-							$data       = array_merge($user->toArray(), $userSeeker->toArray());*/
-				$random_quote = Quote::orderBy(DB::raw('RAND()'))->take(1)->get();
+				$jobMatchData = [
+					'job_id'      => $d->job_id,
+					'seeker_id'   => $this->user->id,
+					'match_score' => $d->total_score
+				];
+				$this->saveJobMatches($jobMatchData);
+			}
+			if ($data) {
+				$extraDataKey = 'quote';
+				$message      = 'OK';
+				return apiResponse(200, $message, null, $data, $extraDataKey, $random_quote);
+			}
+			return apiResponse(500, 'error occurred', null, null);
+			/*} catch (Exception $ex) {
+				return apiResponse(403, 'unknown error occurred', null, null);
+			}*/
+		}
+
+		public function getJobMatches()
+		{
+			$inputs = request()->all();
+
+			$job = Job::where('id', $inputs['job_id'])->first();
+			//explode by space
+			$titleArray      = explode(' ', $job->title);
+			$titleMatchQuery = " CASE WHEN s.`target_job_title` LIKE '" . $job->title . "' THEN 5 ";
+			if (count($titleArray) > 1) {
+				foreach ($titleArray as $t) {
+					$titleMatchQuery .= " WHEN s.`target_job_title` LIKE '%" . $t . "%' THEN 3";
+				}
+			}
+			$titleMatchQuery .= " ELSE 0 END AS title_score";
+			try {
+				$calcDistance = $this->calculateJobMatchesDistance($job->lat, $job->long);
+				/*
+				 * with skill count calculation
+				 *
+				 *
+				 * SELECT
+	(result.candidate_quality_rank +
+	result.personal_style_score +
+	result.work_style_score +
+	result.minimum_education_score +
+	result.seeker_properties_score) AS total_score,result.* FROM
+	(SELECT u.`id`,
+	CASE WHEN (SELECT COUNT(*) FROM seeker_applied_jobs ap WHERE ap.`job_id`='1' AND ap.`seeker_id`=u.`id`)
+	> 0 THEN 1 ELSE 0 END AS is_applied,
+	CASE WHEN (SELECT COUNT(*) FROM seeker_watchlists sw WHERE sw.`job_id`='1' AND sw.`seeker_id`=u.`id`)
+	> 0 THEN 1 ELSE 0 END AS is_watched,
+
+	ROUND(SUM(5-(2*(ABS(st.`score`-sps.`score`))))/COUNT(st.`slider_id`)) AS personal_style_score,
+	ROUND(SUM(5-(2*(ABS(cc.`score`-sws.`score`))))/COUNT(st.`slider_id`)) AS work_style_score,
+	u.`id` AS user_id,CONCAT(u.`first_name`,' ',u.`last_name`) AS `name`,u.`lat`,u.`long` , ROUND(1000 * 6371 * 2 * ATAN(SQRT(SIN(RADIANS(u.`lat` - 31.4457408)/2) * SIN(RADIANS(u.`lat` - 31.4457408)/2) + COS(RADIANS(u
+	.`lat`)) * COS(RADIANS(31.4457408)) * SIN(RADIANS(u.`long` - 74.2231748)/2) * SIN(RADIANS(u.`long` - 74.2231748)/2)),
+	SQRT(1-SIN(RADIANS(u.`lat` - 31.4457408)/2) * SIN(RADIANS(u.`lat` - 31.4457408)/2) + COS(RADIANS(u.`lat`)) * COS(RADIANS(31.4457408)) * SIN
+	(RADIANS(u.`long` - 74.2231748)/2) * SIN(RADIANS(u.`long` - 74.2231748)/2))),
+	0) AS distance , CASE WHEN s.`target_job_title` LIKE 'Senior Software Engineer' THEN 5 WHEN s.`target_job_title` LIKE '%Senior%' THEN 3 WHEN s.`target_job_title` LIKE '%Software%' THEN 3 WHEN s.`target_job_title` LIKE '%Engineer%' THEN 3 ELSE 0 END AS title_score,
+	0 AS minimum_education_score,
+	0 AS seeker_properties_score
+	 ,  CASE WHEN  SUM(srm.`leadership_match_count` + srm.`institute_match_count` + srm.`company_match_count` + srm.`extracurricular_match_count`)
+	 > 0 THEN SUM(srm.`leadership_match_count` + srm.`institute_match_count` + srm.`company_match_count` + srm.`extracurricular_match_count`)
+	 ELSE 0 END AS candidate_quality_rank ,COUNT(sms.`id`) AS skill_count
+
+	FROM users u
+	JOIN user_job_seekers s ON u.`id`=s.`user_id`
+	JOIN seeker_personal_styles sps ON s.`user_id` = sps.`seeker_id`
+	JOIN seeker_traits st ON sps.`slider_id`=st.`slider_id`
+	JOIN seeker_workplace_styles sws ON s.`user_id` = sws.`seeker_id`
+	JOIN company_cultures cc ON sws.`slider_id`=cc.`slider_id` AND cc.`company_id`= '1' AND cc.`employer_id` = '2'
+	LEFT JOIN seeker_resume_matches srm ON u.`id`=srm.`seeker_id`
+	LEFT JOIN seeker_matched_skills sms ON u.`id`=sms.`seeker_id`
+	LEFT JOIN job_skills js ON sms.`title`=js.`title`
+
+	GROUP BY u.`id`
+	HAVING distance < 80450 ) AS result*/
+
+	$data = DB::select("SELECT
+			(result.candidate_quality_rank +
+			result.personal_style_score +
+			result.work_style_score +
+			result.minimum_education_score +
+			result.job_properties_score) AS total_score,result.* FROM
+			(SELECT
+			CASE WHEN (SELECT COUNT(*) FROM seeker_applied_jobs ap WHERE ap.`job_id`='" . $job->id . "' AND ap.`seeker_id`=u.`id`)
+			> 0 THEN 1 ELSE 0 END AS is_applied,
+			CASE WHEN (SELECT COUNT(*) FROM seeker_watchlists sw WHERE sw.`job_id`='" . $job->id . "' AND sw.`seeker_id`=u.`id`)
+			> 0 THEN 1 ELSE 0 END AS is_watched,
+			ROUND(SUM(5-(2*(ABS(st.`score`-sps.`score`))))/COUNT(st.`slider_id`)) AS personal_style_score,
+			ROUND(SUM(5-(2*(ABS(cc.`score`-sws.`score`))))/COUNT(st.`slider_id`)) AS work_style_score,
+			u.`id` AS user_id,CONCAT(u.`first_name`,' ',u.`last_name`) AS `name`,u.`lat`,u.`long` , $calcDistance ,$titleMatchQuery,
+			0 AS minimum_education_score,
+            0 AS job_properties_score, CASE WHEN  SUM(srm.`leadership_match_count` + srm.`institute_match_count` + srm.`company_match_count` + srm.`extracurricular_match_count`)
+		> 0 THEN SUM(srm.`leadership_match_count` + srm.`institute_match_count` + srm.`company_match_count` + srm.`extracurricular_match_count`)  ELSE 0 END AS candidate_quality_rank
+			FROM users u
+			JOIN user_job_seekers s ON u.`id`=s.`user_id`
+			JOIN seeker_personal_styles sps ON s.`user_id` = sps.`seeker_id`
+			JOIN seeker_traits st ON sps.`slider_id`=st.`slider_id`
+			JOIN seeker_workplace_styles sws ON s.`user_id` = sws.`seeker_id`
+			JOIN company_cultures cc ON sws.`slider_id`=cc.`slider_id` AND cc.`company_id`= '" . $job->company_id . "' AND cc.`employer_id` = '" . $job->employer_id . "'
+			LEFT JOIN seeker_resume_matches srm ON u.`id`=srm.`seeker_id`
+			GROUP BY u.`id`
+			HAVING distance < 80450 ) AS result");
+				//Store job seeker matches
+				foreach ($data as $d) {
+
+					$jobMatchData = [
+						'job_id'      => $job->id,
+						'seeker_id'   => $d->user_id,
+						'match_score' => $d->total_score
+					];
+
+					$this->saveJobMatches($jobMatchData);
+				}
 				if ($data) {
-					$extraDataKey = 'quote';
-//					return $data;
 					$message = 'OK';
-					return apiResponse(200, $message, null, $data, $extraDataKey, $random_quote);
+					return apiResponse(200, $message, null, $data);
 				}
 				return apiResponse(500, 'error occurred', null, null);
 			} catch (Exception $ex) {
 				return apiResponse(403, 'unknown error occurred', null, null);
+			}
+		}
+
+		public function saveJobMatches($jobMatchData)
+		{
+			$checkMatch = JobMatch::where('job_id', $jobMatchData['job_id'])
+				->where('seeker_id', $jobMatchData['seeker_id'])->first();
+
+			if ($checkMatch) {
+				//update match
+				JobMatch::where('job_id', $jobMatchData['job_id'])
+					->where('seeker_id', $jobMatchData['seeker_id'])->update([
+						'match_score' => $jobMatchData['match_score']
+					]);
+			} else {
+				//create match
+				JobMatch::create($jobMatchData);
+				$this->updateJobTotalMatchesCount($jobMatchData['job_id'], 1);
 			}
 		}
 
@@ -593,6 +830,26 @@ ELSE 0 END AS is_watched,
 			}
 		}
 
+		function readWordDocument($filename)
+		{
+			$striped_content = '';
+			$content         = '';
+			if (!$filename || !file_exists($filename)) return false;
+			$zip = zip_open($filename);
+			if (!$zip || is_numeric($zip)) return false;
+			while ($zip_entry = zip_read($zip)) {
+				if (zip_entry_open($zip, $zip_entry) == FALSE) continue;
+				if (zip_entry_name($zip_entry) != "word/document.xml") continue;
+				$content .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+				zip_entry_close($zip_entry);
+			}
+			zip_close($zip);
+			$content         = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);
+			$content         = str_replace('</w:r></w:p>', "\r\n", $content);
+			$striped_content = strip_tags($content);
+			return $striped_content;
+		}
+
 		public function login()
 		{
 			$inputs = request()->all();
@@ -680,6 +937,36 @@ ELSE 0 END AS is_watched,
 			}
 		}
 
+		public function updateJobApplicantsCount($jobId, $flag)
+		{
+			$sql = "UPDATE jobs j SET ";
+			if ($flag == 1) {
+				//increment by 1
+				$sql .= "j.`applicants_count` = j.`applicants_count`+1";
+			} else if ($flag == 0) {
+				//decrement by 1
+				$sql .= "j.`applicants_count` = j.`applicants_count`-1";
+			}
+			$sql .= " WHERE j.`id`='" . $jobId . "'";
+			//update applicants count in job table
+			DB::update($sql);
+		}
+
+		public function updateJobTotalMatchesCount($jobId, $flag)
+		{
+			$sql = "UPDATE jobs j SET ";
+			if ($flag == 1) {
+				//increment by 1
+				$sql .= " j.`total_matches_count` = j.`total_matches_count`+1,j.`new_matches_count` = j.`new_matches_count`+1 ";
+			} else if ($flag == 0) {
+				//decrement by 1
+				$sql .= " j.`total_matches_count` = j.`total_matches_count`-1, j.`new_matches_count` = j.`new_matches_count`-1 ";
+			}
+			$sql .= " WHERE j.`id`='" . $jobId . "'";
+			//update applicants count in job table
+			DB::update($sql);
+		}
+
 		public function applyForJob()
 		{
 			$message = '';
@@ -696,13 +983,16 @@ ELSE 0 END AS is_watched,
 							'job_id'       => $inputs['job_id'],
 							'cover_letter' => $inputs['cover_letter']
 						]);
+
+						$this->updateJobApplicantsCount($inputs['job_id'], 1);
 						$message = 'You have successfully applied for this job';
 					} else {
 						$message = 'You have already applied for this job';
 					}
 				} else if ($inputs['flag'] == 0) {
 					if ($check) {
-						$user    = $user->applyForJob()->where('job_id', $inputs['job_id'])->delete();
+						$user = $user->applyForJob()->where('job_id', $inputs['job_id'])->delete();
+						$this->updateJobApplicantsCount($inputs['job_id'], 0);
 						$message = 'Apply canceled successfully';
 					} else {
 						$message = 'You have not applied for this job yet';
@@ -807,6 +1097,24 @@ ELSE 0 END AS is_watched,
 			}
 		}
 
+		public function updateJobLastSeenDate()
+		{
+			$inputs = request()->all();
+			try {
+				$now       = new \DateTime();
+				$updateJob = Job::where('id', $inputs['job_id'])->update([
+					'last_seen_date'    => $now,
+					'new_matches_count' => 0
+				]);
+				if ($updateJob) {
+					return apiResponse(200, 'OK', null, null);
+				}
+				return apiResponse(500, 'error occurred', null, null);
+			} catch (Exception $ex) {
+				return apiResponse(403, 'unknown error occurred', null, null);
+			}
+		}
+
 		public function addJobToWatchlist()
 		{
 			$message = '';
@@ -852,12 +1160,12 @@ ELSE 0 END AS is_watched,
 			$flag   = ContactUs::create($inputs);
 			if ($flag) {
 
-				Mail::raw($inputs['message'],function ($message) use ($inputs) {
+				Mail::raw($inputs['message'], function ($message) use ($inputs) {
 					$message->from($inputs['email'], $inputs['name']);
 					$message->to('mujeeb@suavesolutions.net')->subject('Jobzy Support');
 
 				});
-				if( count( Mail::failures() ) > 0 ) {
+				if (count(Mail::failures()) > 0) {
 
 				} else {
 					return apiResponse(200, 'Thank you for contacting us , we will get back to you ASAP', null, null);
@@ -873,6 +1181,21 @@ ELSE 0 END AS is_watched,
 			/*} catch (Exception $ex) {
 				return apiResponse(403, 'unknown error occurred', null, null);
 			}*/
+		}
+
+		public function updateJobShortlistedApplicantsCount($jobId, $flag)
+		{
+			$sql = "UPDATE jobs j SET ";
+			if ($flag == 1) {
+				//increment by 1
+				$sql .= " j.`shortlisted_applicants_count` = j.`shortlisted_applicants_count`+1";
+			} else if ($flag == 0) {
+				//decrement by 1
+				$sql .= " j.`shortlisted_applicants_count` = j.`shortlisted_applicants_count`-1";
+			}
+			$sql .= " WHERE j.`id`='" . $jobId . "'";
+			//update shortlisted applicants count in job table
+			DB::update($sql);
 		}
 
 		public function addJobShortlist()
@@ -895,6 +1218,7 @@ ELSE 0 END AS is_watched,
 							'job_id'    => $inputs['job_id'],
 							'seeker_id' => $inputs['user_id']
 						]);
+						$this->updateJobShortlistedApplicantsCount($inputs['job_id'], 1);
 						$message = 'User added to shortlist';
 					} else {
 						$message = 'Already shortlisted';
@@ -903,9 +1227,10 @@ ELSE 0 END AS is_watched,
 
 				} else if ($inputs['flag'] == 0) {
 					if ($check) {
-						$user    = JobShortlist::where('job_id', $inputs['job_id'])
+						$user = JobShortlist::where('job_id', $inputs['job_id'])
 							->where('seeker_id', $inputs['user_id'])
 							->delete();
+						$this->updateJobShortlistedApplicantsCount($inputs['job_id'], 0);
 						$message = 'User removed from shortlist';
 					} else {
 						$message = 'User not shortlisted yet';

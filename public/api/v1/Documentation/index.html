@@ -67,6 +67,8 @@
                 <li><a href="#sec19">20-Logout</a></li>
                 <li><a href="#sec20">21-Update Employer Company Info</a></li>
                 <li><a href="#sec21">22-Contact us</a></li>
+                <li><a href="#sec22">23-Update Job Last Seen Date</a></li>
+                <li><a href="#sec23">24-Get Job Matches</a></li>
             </ul>
         </div>
         <!--/left-->
@@ -224,7 +226,6 @@
     </pre>                            </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -324,7 +325,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -439,7 +439,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -496,7 +495,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -550,7 +548,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -608,7 +605,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -671,7 +667,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -734,7 +729,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -792,12 +786,10 @@
             "minimum_education_score":  VALUE,
             "job_properties_score":  VALUE
         },
-    "quote": [
-        {
+    "quote":{
             "id": VALUE,
             "text": "STRING VALUE"
         }
-    ]
     ]
 }
  </pre>
@@ -815,7 +807,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -885,7 +876,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1026,7 +1016,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1094,7 +1083,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1160,7 +1148,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1227,7 +1214,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1311,7 +1297,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1375,7 +1360,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1435,7 +1419,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1500,7 +1483,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1587,7 +1569,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1638,7 +1619,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -1734,6 +1714,130 @@
 {
     "status_code": 200,
     "message": "Thank you for contacting us , we will get back to you ASAP"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec22">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>23-Update Job Last Seen Date</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + jobs/updateJobLastSeenDate/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK"
+}
+ </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Error Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 500 OR 403 OR 401,
+    "message": "Error Message",
+}
+ </pre>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+             <div id="sec23">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>24-Get Job Matches</h3>
+                        <table class="table table-responsive table-bordered">
+                            <tr>
+                                <th>Method</th>
+                                <td>GET</td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td><b>Base URL</b> + search/getJobMatches/?</td>
+                            </tr>
+
+                            <tr>
+                                <th>URL Parameters</th>
+
+                                <td>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">auth_token<span class="mandatory"> *</span></li>
+                                    <li class="list-group-item">job_id<span class="mandatory"> *</span></li>
+                                </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Success Response</th>
+                                <td>
+ <pre>
+{
+    "status_code": 200,
+    "message": "OK",
+    "result": [
+        {
+            "total_score": VALUE,
+            "is_applied": VALUE,
+            "is_watched": VALUE,
+            "personal_style_score": VALUE,
+            "work_style_score": VALUE,
+            "user_id": VALUE,
+            "name": "STRING VALUE",
+            "lat":  VALUE,
+            "long":  VALUE,
+            "distance":  VALUE,
+            "title_score": VALUE,
+            "minimum_education_score": VALUE,
+            "job_properties_score": VALUE,
+            "candidate_quality_rank": VALUE
+        }
+    ]
 }
  </pre>
                                 </td>

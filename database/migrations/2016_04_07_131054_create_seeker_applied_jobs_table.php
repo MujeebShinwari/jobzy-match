@@ -18,9 +18,11 @@ class CreateSeekerAppliedJobsTable extends Migration
 	        $table->integer('job_id'); // FK
 	        $table->text('cover_letter');
 	        $table->tinyInteger('is_shortlisted');
+	        /*
 	        $table->float('match_percentage');
 	        $table->float('work_style_percentage');
 	        $table->float('qualification_percentage');
+	        */
             $table->timestamps();
         });
     }

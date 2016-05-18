@@ -17,8 +17,6 @@
 				$table->integer('job_id'); // FK
 				$table->string('paid_amount');
 				$table->string('duration');
-				$table->date('start_date');
-				$table->date('expiry_date');
 				$table->integer('plan_id'); // FK
 				//Here will we include transaction details like paypal id and all that
 				$table->timestamps();
